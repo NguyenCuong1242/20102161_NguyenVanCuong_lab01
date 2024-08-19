@@ -1,1 +1,25 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 04</title>
+</head>
+<body>
+    <script>
+        function calculateTip(bill) { // Hàm calculateTip để tính toán tiền tip
+            // Tính tiền tip dựa trên giá hóa đơn
+            const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
+            return tip;
+        }
+        function printBillDetails(bill) { // Hàm printBillDetails để in chi tiết hóa đơn 
+            const tip = calculateTip(bill);
+            const total = bill + tip;
+            console.log(`Giá hóa đơn là ${bill}, tiền tip là ${tip.toFixed(2)}, và tổng giá trị là ${total.toFixed(2)}.`);
+        }
+        // Dữ liệu kiểm tra
+        const billValues = [275, 40, 430];
+        billValues.forEach(bill => printBillDetails(bill)); // Hàm forEach được sử dụng để áp dụng printBillDetails cho từng giá trị hóa đơn
+    </script>
+</body>
+</html>
